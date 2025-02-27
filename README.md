@@ -1,4 +1,4 @@
-# Crear carpeta y archivo HTML
+# sitio web
 mkdir mi-sitio-web && cd mi-sitio-web && echo '<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -32,14 +32,3 @@ mkdir mi-sitio-web && cd mi-sitio-web && echo '<!DOCTYPE html>
 </body>
 </html>' > index.html
 
-# Inicializar repositorio Git
-git init && git add . && git commit -m "Primer commit"
-
-# Crear repositorio en GitHub y subir archivos
-curl -u juanperez -d '{"name":"mi-sitio-web", "private":false}' https://api.github.com/user/repos && git remote add origin https://github.com/juanperez/mi-sitio-web.git && git branch -M main && git push -u origin main
-
-# Activar GitHub Pages
-curl -u juanperez -X POST -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/juanperez/mi-sitio-web/pages --data '{"source":{"branch":"main","path":"/"}}'
-
-# Mostrar enlace del sitio
-echo "¡Tu sitio está listo! Visita: https://juanperez.github.io/mi-sitio-web"
